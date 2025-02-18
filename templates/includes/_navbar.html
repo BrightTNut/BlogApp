@@ -1,13 +1,106 @@
-<nav class="navbar navbar-default">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Orange Navbar</title>
+
+    <!-- Bootstrap CDN -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Google Font for better cursive style -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Navbar Styling */
+      .navbar {
+        background: linear-gradient(to right, #ff8000, #ff5500);
+        border: none;
+        border-radius: 8px;
+      }
+
+      .navbar-brand {
+        color: white !important;
+        font-size: 5rem;
+        font-weight: bold;
+        font-family: "Dancing Script", cursive;
+      }
+
+      .container {
+        padding: 2rem;
+      }
+
+      /* Navbar Links */
+      .navbar-nav > li > a,
+      .navbar-right > li > a {
+        color: white !important;
+        font-weight: bold;
+        font-family: "Dancing Script", cursive;
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* li hover effect */
+      .navbar-nav > li:hover > a,
+      .navbar-right > li:hover > a {
+        color: black !important; /* Changes color to black when hovering over list item */
+        background: rgba(255, 255, 255, 0.2); /* Optional: background effect */
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      /* Proper Link Styling */
+      a {
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: white !important; /* Keep the same color for visited links */
+      }
+
+      a:hover {
+        text-decoration: none; /* Remove underline on hover */
+      }
+
+      a:active {
+        text-decoration: underline; /* Add underline only when clicked */
+      }
+
+      /* Navbar Toggle Button */
+      .navbar-toggle {
+        background-color: #ff5500;
+      }
+
+      .icon-bar {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar"
+            aria-expanded="false"
+            aria-controls="navbar"
+          >
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" >Blog App</a>
+          <a class="navbar-brand" href="/">Web Feed</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -18,14 +111,15 @@
 
           <ul class="nav navbar-nav navbar-right">
             {% if session.logged_in %}
-              <li><a href="/dashboard">Dashboard</a></li>
-              <li><a href="/logout">Logout</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
             {% else %}
-              <li><a href="/register">Register</a></li>
-              <li><a href="/login">Login</a></li>
+            <li><a href="/register"> Sign Up</a></li>
+            <li><a href="/login">Login</a></li>
             {% endif %}
-
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </nav>
+  </body>
+</html>

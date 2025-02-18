@@ -1,14 +1,38 @@
-{% extends 'layout.html' %}
+{% extends 'layout.html' %} {% block body %}
 
-{% block body %}
-  <div class="jumbotron text-center">
-    <h1>Welcome To BlogApp</h1>
-    <p class="lead">This application is built on the Python Flask framework.</p>
-    {% if session.logged_in == NULL %}
-      <a href="/register" class="btn btn-primary btn-lg">Register</a>
-      <a href="/login" class="btn btn-success btn-lg">Login</a>
-    {% else %}
-    	<a href="/articles" class="btn btn-primary btn-lg">articles</a>
-    {% endif %}
-  </div>
+<div
+  class="text-center"
+  style="
+    background: linear-gradient(to right, #c3bab1, #cf5e25);
+    border-radius: 8px;
+    padding: 2rem;
+  "
+>
+  <h1 style="font-family: 'Dancing Script', cursive">Welcome To Web Feed</h1>
+  <p class="lead" style="font-family: 'Dancing Script', cursive">
+    This application is built on the Python Flask framework.
+  </p>
+
+  {% if session.logged_in is none %}
+  <a
+    href="/register"
+    style="font-family: 'Dancing Script', cursive"
+    class="btn btn-primary btn-lg"
+    >Register</a
+  >
+  <a
+    href="/login"
+    style="font-family: 'Dancing Script', cursive"
+    class="btn btn-success btn-lg"
+    >Login</a
+  >
+  {% else %}
+  <a
+    href="/articles"
+    style="font-family: 'Dancing Script', cursive"
+    class="btn btn-warning btn-lg"
+    >Articles</a
+  >
+  {% endif %}
+</div>
 {% endblock %}

@@ -1,24 +1,37 @@
-{% extends 'layout.html' %}
-
-{% block body %}
-  <h1>Register</h1>
+{% extends 'layout.html' %} {% block body %}
+<div style="display: flex; justify-content: space-between">
+  <h1 style="padding: 18rem; font-family: 'Dancing Script', cursive">
+    Sign Up
+  </h1>
   {% from "includes/_formhelpers.html" import render_field %}
-  <form method="POST" action="">
-    <div class="form-group">
-      {{render_field(form.name, class_="form-control")}}
+  <form
+    method="POST"
+    action=""
+    class="container"
+    style="font-size: 3rem; font-family: 'Dancing Script', cursive"
+  >
+    <div class="row">
+      <div class="offset-md-3" style="width: 100%">
+        <div class="form-group">
+          {{ render_field(form.name, class_="form-control custom-font") }}
+        </div>
+        <div class="form-group">
+          {{ render_field(form.email, class_="form-control custom-font") }}
+        </div>
+        <div class="form-group">
+          {{ render_field(form.username, class_="form-control custom-font") }}
+        </div>
+        <div class="form-group">
+          {{ render_field(form.password, class_="form-control custom-font") }}
+        </div>
+        <div class="form-group">
+          {{ render_field(form.confirm, class_="form-control custom-font") }}
+        </div>
+        <p class="text-center">
+          <input type="submit" class="btn btn-primary" value="Submit" />
+        </p>
+      </div>
     </div>
-    <div class="form-group">
-      {{render_field(form.email, class_="form-control")}}
-    </div>
-    <div class="form-group">
-      {{render_field(form.username, class_="form-control")}}
-    </div>
-    <div class="form-group">
-      {{render_field(form.password, class_="form-control")}}
-    </div>
-    <div class="form-group">
-      {{render_field(form.confirm, class_="form-control")}}
-    </div>
-    <p><input type="submit" class="btn btn-primary" value="Submit"></p>
   </form>
+</div>
 {% endblock %}
