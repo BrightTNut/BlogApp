@@ -2,10 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title style="font-family: 'Dancing Script', cursive">Web Feed App</title>
+    <title>Web Feed App</title>
+
+
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     />
   </head>
   <body
@@ -20,10 +22,16 @@
       {% include 'includes/_messages.html' %} {% block body %}{% endblock %}
     </div>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
-    <script type="text/javascript">
-      CKEDITOR.replace("editor");
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CKEditor 5 (Only One Version) -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
+
+    <script>
+      ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
+        console.error("CKEditor 5 Error:", error);
+      });
     </script>
   </body>
 </html>
